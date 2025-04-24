@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: lh7a27vzf-go-gitops
+  description: This is GitOps manifest for lh7a27vzf-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=lh7a27vzf-go
+    backstage.io/kubernetes-id: lh7a27vzf-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: lh7a27vzf-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:lh7a27vzf-go
